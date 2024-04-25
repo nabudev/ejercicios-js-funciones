@@ -1,24 +1,25 @@
-function PromedioNotas(){
-    var nota;
-    var promedio;
-    var cantidad=0;
-    var suma=0;
-    while(nota!==-1){
-        if(nota!==-1){
-            nota= parseInt(prompt("Ingrese la nota (o -1 para terminar): " ));
-            suma+= nota;
-            cantidad++;
-        }
+function calcularPromedioDeNotas() {
+    let sumaNotas = 0;
+    let cantidadNotas = 0;
+  
+    while (true) {
+      let nota = parseFloat(prompt("Ingrese una nota (-1 para terminar):"));
+  
+      if (nota === -1) {
+        break;
+      }
+  
+      sumaNotas += nota;
+      cantidadNotas++;
     }
-
-    if(cantidad==0){
-        return "No se ingresaron notas: ";
+  
+    if (cantidadNotas === 0) {
+      alert("No se ingresaron notas.");
+    } else {
+      const promedio = sumaNotas / cantidadNotas;
+      alert(`El ${promedio} de las notas es: ${promedio.toFixed(2)} `);
     }
-    else{
-        promedio= suma/cantidad;
-        alert("EL promedio es: " +promedio);
-    }
-}
-
-alert(PromedioNotas());
+  }
+  
+  calcularPromedioDeNotas();
 
